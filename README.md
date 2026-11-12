@@ -1,79 +1,86 @@
-<!-- This is the markdown template for the final project of the Building AI course, 
-created by Reaktor Innovations and University of Helsinki. 
-Copy the template, paste it to your GitHub README and edit! -->
-
-# Project Title
+# AI Construction Control
+### An AI Assistant for Construction and Technical Documentation Management
 
 Final project for the Building AI course
 
 ## Summary
 
-Describe briefly in 2-3 sentences what your project is about. About 250 characters is a nice length! 
-
+AI Construction Control is a concept of an AI-powered assistant designed to support engineers in the construction industry. It helps analyze technical documentation, compare planned and actual work quantities, identify discrepancies, and check the completeness of construction documents.
 
 ## Background
 
-Which problems does your idea solve? How common or frequent is this problem? What is your personal motivation? Why is this topic important or interesting?
+Construction projects involve large amounts of technical and administrative documentation. Engineers in Production and Technical Departments (PTO) spend considerable time checking drawings, specifications, bills of quantities, work completion reports, and as-built documentation.
 
-This is how you make a list, if you need one:
-* problem 1
-* problem 2
-* etc.
+Many of these tasks are performed manually, which can lead to errors, delays, and inconsistencies between project documentation and actual construction work.
 
+The main problems this project aims to address are:
+
+- Time-consuming manual checks of construction documentation.
+- Differences between design quantities, estimated quantities, and actual completed work.
+- Errors in Acts of Completed Works (AVR).
+- Missing or incomplete as-built documentation.
+- Difficulties in tracking changes in design documentation.
+- Delays in identifying discrepancies between contractors' reports and project requirements.
+
+My personal motivation comes from my experience in the construction industry and working with technical documentation. I believe that artificial intelligence can help engineers reduce repetitive work, improve accuracy, and make construction project management more efficient.
 
 ## How is it used?
 
-Describe the process of using the solution. In what kind situations is the solution needed (environment, time, etc.)? Who are the users, what kinds of needs should be taken into account?
+AI Construction Control is intended to be used by:
 
-Images will make your README look nice!
-Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
-![Cat](https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg)
+- PTO engineers.
+- Construction site engineers.
+- Client-side technical supervision and construction management teams.
+- Project managers.
+- Engineers responsible for checking completed work and documentation.
 
-If you need to resize images, you have to use an HTML tag, like this:
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="300">
+The proposed system would work as follows:
 
-This is how you create code examples:
-```
-def main():
-   countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
-   pop = [5615000, 5439000, 324000, 5080000, 9609000]   # not actually needed in this exercise...
-   fishers = [1891, 2652, 3800, 11611, 1757]
+1. The engineer uploads project documentation, drawings, specifications, bills of quantities, and work completion reports.
+2. The AI system extracts relevant information from the documents.
+3. The system compares planned work quantities with the quantities reported by contractors.
+4. It identifies possible discrepancies, missing information, and inconsistencies.
+5. The system checks whether the required as-built documentation is included in the submitted package.
+6. The engineer receives a report with detected issues and recommendations for further review.
 
-   totPop = sum(pop)
-   totFish = sum(fishers)
+For example, if a contractor submits an Act of Completed Works (AVR) claiming 500 cubic meters of concrete work, the system could compare this quantity with the relevant project documentation and available supporting records.
 
-   # write your solution here
+If a discrepancy is detected, the system highlights it and asks the engineer to verify the information.
 
-   for i in range(len(countries)):
-      print("%s %.2f%%" % (countries[i], 100.0))    # current just prints 100%
-
-main()
-```
-
+The final decision always remains with the qualified engineer. AI supports the verification process but does not replace professional responsibility.
 
 ## Data sources and AI methods
-Where does your data come from? Do you collect it yourself or do you use data collected by someone else?
-If you need to use links, here's an example:
-[Twitter API](https://developer.twitter.com/en/docs)
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+The system could use several types of construction data:
 
-## Challenges
+**Data sources:**
 
-What does your project _not_ solve? Which limitations and ethical considerations should be taken into account when deploying a solution like this?
+- Architectural and structural drawings.
+- Project and working documentation.
+- Technical specifications.
+- Bills of quantities.
+- Estimated quantities and cost documentation.
+- Acts of Completed Works (AVR).
+- As-built and executive documentation.
+- Construction schedules.
+- Reports submitted by contractors.
 
-## What next?
+The data could come from construction companies, project documentation systems, and authorized project records. For development and testing, anonymized or synthetic data could also be used.
 
-How could your project grow and become something even more? What kind of skills, what kind of assistance would you  need to move on? 
+**AI methods:**
 
+1. **Optical Character Recognition (OCR)**
 
-## Acknowledgments
+   Used to recognize text, numbers, tables, and other information in scanned documents and drawings.
 
-* list here the sources of inspiration 
-* do not use code, images, data etc. from others without permission
-* when you have permission to use other people's materials, always mention the original creator and the open source / Creative Commons licence they've used
-  <br>For example: [Sleeping Cat on Her Back by Umberto Salvagnin](https://commons.wikimedia.org/wiki/File:Sleeping_cat_on_her_back.jpg#filelinks) / [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
-* etc
+2. **Natural Language Processing (NLP)**
+
+   Used to analyze technical documents, identify relevant information, and classify documents by type.
+
+3. **Machine Learning**
+
+   Used to identify patterns in construction data and detect unusual differences between planned and reported work quantities.
+
+4. **Anomaly Detection**
+
+   Used to highlight unusual values, possible
